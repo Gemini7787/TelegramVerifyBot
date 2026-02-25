@@ -1,0 +1,16 @@
+name = "telegramverifybot"          # ← 必须改成你自己的唯一名称，否则部署会冲突
+
+main = "index.js"
+compatibility_date = "2026-02-26"
+
+# 你必须先在 Cloudflare Dashboard 创建 D1 数据库，然后在这里填 database_id
+# 创建步骤：Workers & Pages → D1 → Create database → 复制 ID
+[[d1_databases]]
+binding = "DB"
+database_name = "verify-sessions-db"
+database_id = ""          
+
+[vars]
+BOT_USERNAME = "YOUR_BOT_USERNAME"    # ← 改成你的 bot username（不带@）
+
+# 其他敏感密钥必须用 wrangler secret put 设置，绝不要写在这里！
