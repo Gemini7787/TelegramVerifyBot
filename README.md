@@ -7,6 +7,8 @@ bot采取了企业级 OAuth 2.0 标准思维，运用了状态映射架构和Opa
 
 网页端首选体验丝滑的 Cloudflare Turnstile 。如果用户完成这道防线的时间小于 1.5 秒，代码会立刻判定为机器行为，隐藏 Turnstile，拉起备用的 Google reCAPTCHA 进行二次验证 。
 
+本项目依赖 Cloudflare Workers + D1，请自行创建 D1 数据库并绑定。环境变量/密钥需通过 wrangler secret put 设置，包括 TG_BOT_TOKEN、TURNSTILE_SITE_KEY 等。部署前请阅读 Cloudflare 文档：https://developers.cloudflare.com/workers/。
+
 构建了成功的实例： @kuwiambot
 
 制作不易，如果喜欢可以给一个star吗？
